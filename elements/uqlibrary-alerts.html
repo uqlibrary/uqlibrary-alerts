@@ -1,0 +1,98 @@
+<link rel="import" href="elements.html">
+
+<!--
+`<uqlibrary-alerts>` is a simple element that displays alerts functionality of UQ Library
+
+Example:
+
+  <uqlibrary-alerts></uqlibrary-alerts>
+
+@demo
+
+@demo demo/index.html Demo of uqlibrary-alerts
+-->
+<dom-module id="uqlibrary-alerts">
+  <template>
+    <style is="custom-style" include="common-styles">
+    :host {
+      font-family: var(--font-family);
+      font-size: var(--body-font-size);
+
+      --alert-text-color: #D32F2F;
+      --alert-background-color: #FFEBEE;
+      --alert-border-color: #D32F2F;
+
+      --notice-text-color: #31708f;
+      --notice-background-color: #d9edf7;
+      --notice-border-color: #bce8f1;
+    }
+
+    .alert-container {
+      @apply(--layout-horizontal);
+    }
+
+    .alert-container > div {
+      padding: 10px 15px;
+      margin: auto 0;
+    }
+
+    .alert-text-container {
+      padding: 10px 0px !important;
+      @apply(--layout-flex);
+    }
+
+    .alert-urgent {
+      border: 1px solid var(--alert-border-color);
+      background-color: var(--alert-background-color);
+      color: var(--alert-text-color) !important;
+    }
+
+    .alert-urgent .caption {
+      color: var(--alert-text-color) !important;
+    }
+
+    .alert-notice {
+      border: 1px solid var(--notice-border-color);
+      background-color: var(--notice-background-color);
+      color: var(--notice-text-color);
+    }
+
+    .alert-notice .caption {
+      color: var(--notice-text-color) !important;
+    }
+
+  </style>
+
+  <uqlibrary-api-alerts id="alertsApi" on-uqlibrary-api-alerts="_alertsLoaded"></uqlibrary-api-alerts>
+  <uqlibrary-ga id="ga" appName="{{gaAppName}}"></uqlibrary-ga>
+
+  <template is="dom-repeat" items=[[alerts]]>
+    <div class$="alert-container alert-[[_getAlertType(item.urgent)]]">
+      <div class="alert-icon-container">
+        <template is="dom-if" if=[[item.urgent]]>
+          <iron-icon icon="icons:warning"></iron-icon>
+        </template>
+        <template is="dom-if" if=[[!item.urgent]]>
+          <iron-icon icon="icons:info"></iron-icon>
+        </template>
+      </div>
+
+      <div class="alert-text-container caption"> 
+        <strong>[[item.title]]</strong>
+        [[item.body]]
+        <a href$="[[item.url]]" on-click="_linkClicked" aria-title$="More details about [[item.title]]">[[item.linkTitle]]</a>
+
+        <a href="#" on-click="_linkClicked" data-title="[[item.title]]" aria-title$="More details about [[item.title]]">More details</a>
+
+      </div>
+
+      <div class="alert-close-container"> 
+        <paper-icon-button icon="icons:close" on-tap="_hideAlerts"></paper-icon-button>
+      </div>
+    </div>
+  </template>
+
+  </template>
+
+  <script src="uqlibrary-alerts.js"></script>
+</dom-module>
