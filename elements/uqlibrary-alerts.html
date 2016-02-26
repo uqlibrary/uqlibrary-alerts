@@ -75,14 +75,15 @@ Example:
       <div class="alert-text-container caption"> 
         <strong>[[item.title]]</strong>
         [[item.body]]
-        <a href$="[[item.url]]" on-click="_linkClicked" aria-title$="More details about [[item.title]]">[[item.linkTitle]]</a>
 
-        <a href="#" on-click="_linkClicked" data-title="[[item.title]]" aria-title$="More details about [[item.title]]">More details</a>
+        <template is="dom-if" if="[[item.url">
+        <a href$="[[item.url]]" on-click="_linkClicked" data-title="[[item.title]]" aria-label$="More details about [[item.title]]">[[item.urlTitle]]</a>
+        </template>
 
       </div>
 
       <div class="alert-close-container"> 
-        <paper-icon-button icon="icons:close" on-tap="_hideAlerts"></paper-icon-button>
+        <paper-icon-button icon="icons:close" on-tap="_hideAlerts" aria-label="Close alerts"></paper-icon-button>
       </div>
     </div>
   </template>
