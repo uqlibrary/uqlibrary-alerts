@@ -26,6 +26,12 @@ Example:
       @apply(--layout-horizontal);
     }
 
+    .alerts-container.fadeout {
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s 2s, opacity 2s linear;
+    }
+
     .alert-container > div {
       padding: 10px 15px;
       margin: auto 0;
@@ -58,35 +64,38 @@ Example:
 
   </style>
 
-  <uqlibrary-api-alerts id="alertsApi" on-uqlibrary-api-alerts="_alertsLoaded"></uqlibrary-api-alerts>
-  <uqlibrary-ga id="ga" appName="{{gaAppName}}"></uqlibrary-ga>
+  <div class="alerts-container">
 
-  <template is="dom-repeat" items=[[alerts]]>
-    <div class$="alert-container alert-[[_getAlertType(item.urgent)]]">
-      <div class="alert-icon-container">
-        <template is="dom-if" if=[[item.urgent]]>
-          <iron-icon icon="icons:warning"></iron-icon>
-        </template>
-        <template is="dom-if" if=[[!item.urgent]]>
-          <iron-icon icon="icons:info"></iron-icon>
-        </template>
-      </div>
+      <uqlibrary-api-alerts id="alertsApi" on-uqlibrary-api-alerts="_alertsLoaded"></uqlibrary-api-alerts>
+      <uqlibrary-ga id="ga" appName="{{gaAppName}}"></uqlibrary-ga>
 
-      <div class="alert-text-container caption"> 
-        <strong>[[item.title]]</strong>
-        [[item.body]]
+      <template is="dom-repeat" items=[[alerts]]>
+        <div class$="alert-container alert-[[_getAlertType(item.urgent)]]">
+          <div class="alert-icon-container">
+            <template is="dom-if" if=[[item.urgent]]>
+              <iron-icon icon="icons:warning"></iron-icon>
+            </template>
+            <template is="dom-if" if=[[!item.urgent]]>
+              <iron-icon icon="icons:info"></iron-icon>
+            </template>
+          </div>
 
-        <template is="dom-if" if="[[item.url">
-        <a href$="[[item.url]]" on-click="_linkClicked" data-title="[[item.title]]" aria-label$="More details about [[item.title]]">[[item.urlTitle]]</a>
-        </template>
+          <div class="alert-text-container caption">
+            <strong>[[item.title]]</strong>
+            [[item.body]]
 
-      </div>
+            <template is="dom-if" if="[[item.url">
+            <a href$="[[item.url]]" on-click="_linkClicked" data-title="[[item.title]]" aria-label$="More details about [[item.title]]">[[item.urlTitle]]</a>
+            </template>
 
-      <div class="alert-close-container"> 
-        <paper-icon-button icon="icons:close" on-tap="_hideAlerts" aria-label="Close alerts"></paper-icon-button>
-      </div>
-    </div>
-  </template>
+          </div>
+
+          <div class="alert-close-container">
+            <paper-icon-button icon="icons:close" on-tap="_hideAlerts" aria-label="Close alerts"></paper-icon-button>
+          </div>
+        </div>
+      </template>
+  </div>
 
   </template>
 

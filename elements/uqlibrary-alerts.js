@@ -50,10 +50,11 @@
         // production
         document.cookie = 'UQL-Hide-Alerts=1;expires=' + date.toGMTString() + ';domain=.library.uq.edu.au;path=/';
 
-        // localhost
-        // document.cookie = 'UQL-Hide-Alerts=1;expires=' + date.toGMTString();
-
-        this.alerts = [];
+        var alerts = this.querySelector('.alerts-container');
+        alerts.className += ' fadeout';
+        this.async(function(){
+          this.alerts = [];
+        }, 2000);
       }
     },
 
