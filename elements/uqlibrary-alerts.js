@@ -43,9 +43,9 @@
       this.$.ga.addEvent('Hide alert');
 
       if (document.cookie.indexOf("UQL-Hide-Alerts=1") <= -1) {
-        //set cookie for 30 min not to show tooltip on load
+        //set cookie for 24 hours not to show tooltip on load
         var date = new Date();
-        date.setTime(date.getTime()+(30*60*1000));
+        date.setTime(date.getTime()+(24*60*60*1000));
 
         // production
         document.cookie = 'UQL-Hide-Alerts=1;expires=' + date.toGMTString() + ';domain=.library.uq.edu.au;path=/';
