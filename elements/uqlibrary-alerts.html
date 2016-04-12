@@ -73,10 +73,10 @@ Example:
         <div class$="alert-container alert-[[_getAlertType(item.urgent)]]">
           <div class="alert-icon-container">
             <template is="dom-if" if=[[item.urgent]]>
-              <iron-icon icon="icons:warning"></iron-icon>
+              <iron-icon icon="icons:warning" aria-label="warning icon"></iron-icon>
             </template>
             <template is="dom-if" if=[[!item.urgent]]>
-              <iron-icon icon="icons:info"></iron-icon>
+              <iron-icon icon="icons:info" aria-label="information icon"></iron-icon>
             </template>
           </div>
 
@@ -91,7 +91,7 @@ Example:
           </div>
 
           <div class="alert-close-container">
-            <paper-icon-button icon="icons:close" on-tap="_hideAlerts" aria-label="Close alerts"></paper-icon-button>
+            <paper-icon-button icon="icons:close" on-tap="_hideAlerts" alt="Close alert" aria-label="Close alert"></paper-icon-button>
           </div>
         </div>
       </template>
