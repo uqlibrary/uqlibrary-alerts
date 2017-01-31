@@ -1,5 +1,8 @@
 # uqlibrary-alerts
 
+[![Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-alertsadd dependency status display [PT #134121863].svg)](https://david-dm.org/uqlibrary/uqlibrary-alerts)
+[![Dev Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-alerts/dev-status.svg)](https://david-dm.org/uqlibrary/uqlibrary-alerts?type=dev)
+
 uqlibrary-alerts is a simple list view showing alerts for all libraries at the University of Queensland. 
 
 Full documentation can be found at [GitHub Pages](http://uqlibrary.github.io/uqlibrary-alerts).
