@@ -81,13 +81,10 @@ Example:
           </div>
 
           <div class="alert-text-container caption">
-            <strong>[[item.title]]</strong>
-            [[item.body]]
-
+            <strong>[[item.title]]</strong>&nbsp;[[item.body]]&nbsp;
             <template is="dom-if" if="[[item.url">
             <a href$="[[item.url]]" on-click="_linkClicked" data-title="[[item.title]]" aria-label$="More details about [[item.title]]">[[item.urlTitle]]</a>
             </template>
-
           </div>
 
           <div class="alert-close-container">
