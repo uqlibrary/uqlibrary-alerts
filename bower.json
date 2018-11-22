@@ -1,6 +1,6 @@
 {
   "name": "uqlibrary-alerts",
-  "version": "0.0.1",
+  "version": "1.0.3",
   "keywords": [
     "seed",
     "polymer",
@@ -13,15 +13,11 @@
     "iron-elements": "PolymerElements/iron-elements#^1.0.0",
     "paper-elements": "PolymerElements/paper-elements#^1.0.0",
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "uqlibrary-api": "uqlibrary/uqlibrary-api#v1.0.0",
-    "uqlibrary-ga": "uqlibrary/uqlibrary-ga#v1.0.0",
-    "uqlibrary-styles": "uqlibrary/uqlibrary-styles#v1.0.0"
+    "uqlibrary-api": "uqlibrary/uqlibrary-api",
+    "uqlibrary-ga": "uqlibrary/uqlibrary-ga",
+    "uqlibrary-styles": "uqlibrary/uqlibrary-styles"
   },
   "devDependencies": {
-    "web-component-tester": "*",
-    "test-fixture": "PolymerElements/test-fixture#^1.0.0"
-  },
-  "resolutions": {
-    "test-fixture": "^1.0.0"
+    "web-component-tester": "*"
   }
 }
