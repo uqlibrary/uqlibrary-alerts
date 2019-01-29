@@ -1,5 +1,6 @@
 # uqlibrary-alerts
 
+[![Codeship Status for uqlibrary/uqlibrary-alerts](https://app.codeship.com/projects/1282e0d0-064d-0137-c6b1-26c1dc1e6e4a/status?branch=master)](https://codeship.com/projects/325631)
 [![Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-alerts/status.svg)](https://david-dm.org/uqlibrary/uqlibrary-alerts)
 [![Dev Dependency Status](https://david-dm.org/uqlibrary/uqlibrary-alerts/dev-status.svg)](https://david-dm.org/uqlibrary/uqlibrary-alerts?type=dev)
 
