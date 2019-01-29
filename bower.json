@@ -9,7 +9,7 @@
   "private": true,
   "main": "uqlibrary-alerts.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.2.0",
+    "polymer": "Polymer/polymer#^1.11.3",
     "iron-elements": "PolymerElements/iron-elements#^1.0.0",
     "paper-elements": "PolymerElements/paper-elements#^1.0.0",
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
@@ -18,6 +18,10 @@
     "uqlibrary-styles": "uqlibrary/uqlibrary-styles"
   },
   "devDependencies": {
-    "web-component-tester": "*"
+    "web-component-tester": "*",
+    "test-fixture": "PolymerElements/test-fixture#^1.1.2"
+  },
+  "resolutions": {
+    "test-fixture": "^1.1.2"
   }
 }
