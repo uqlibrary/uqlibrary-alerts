@@ -1,11 +1,7 @@
 {
   "name": "uqlibrary-alerts",
-  "version": "1.0.5",
-  "keywords": [
-    "seed",
-    "polymer",
-    "web-components"
-  ],
+  "version": "1.0.6",
+  "keywords": ["seed", "polymer", "web-components"],
   "private": true,
   "main": "uqlibrary-alerts.html",
   "dependencies": {
